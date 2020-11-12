@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>FS</inputName>
+  <text>SELECT 	Path,
+	Size
+FROM C:\*.*
+WHERE NOT Attributes LIKE '%D%' AND Attributes LIKE '%H%'
+ORDER BY Size DESC
+</text>
+  <inputFormat>
+    <recurse>-1</recurse>
+    <preserveLastAccTime>False</preserveLastAccTime>
+    <useLocalTime>True</useLocalTime>
+  </inputFormat>
+</query>

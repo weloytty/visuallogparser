@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>IISW3C</inputName>
+  <text>SELECT cs-uri-stem AS Url, Count(*) AS Hits, 
+AVG(cs-bytes) AS Avg, Max(cs-bytes) AS Max, 
+Min(cs-bytes) AS Min, Sum(cs-bytes) AS TotalBytes 
+FROM ex*.log 
+GROUP BY Url 
+HAVING (Hits &gt; 100) 
+ORDER BY [Avg] DESC</text>
+  <inputFormat>
+    <codepage>-2</codepage>
+    <iCodepage>-2</iCodepage>
+    <recurse>0</recurse>
+    <useDoubleQuotes>False</useDoubleQuotes>
+    <dQuotes>False</dQuotes>
+    <useDirectiveDateTime>False</useDirectiveDateTime>
+    <dirTime>False</dirTime>
+    <consolidateLogs>False</consolidateLogs>
+    <iCheckpoint />
+    <minDateMod />
+  </inputFormat>
+</query>

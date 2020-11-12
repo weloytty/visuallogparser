@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>IIS</inputName>
+  <text>SELECT TOP 10 cs-uri-stem AS Url, MIN(time-taken) as [Min], 
+AVG(time-taken) AS [Avg], max(time-taken) AS [Max], 
+count(time-taken) AS Hits 
+FROM ex*.log 
+WHERE time-taken &lt; 120000 
+GROUP BY Url 
+ORDER BY [Avg] DESC</text>
+  <inputFormat>
+    <codepage>-2</codepage>
+    <iCodepage>-2</iCodepage>
+    <recurse>0</recurse>
+    <locale>DEF</locale>
+    <iCheckpoint />
+    <minDateMod />
+  </inputFormat>
+</query>

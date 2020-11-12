@@ -1,0 +1,300 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32719805-E3FC-4299-BD33-F9DCEBC66007}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Serialcoder.VisualLogParser</RootNamespace>
+    <AssemblyName>VisualLogParser</AssemblyName>
+    <ApplicationIcon>eventlog.ico</ApplicationIcon>
+    <SignManifests>true</SignManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>9E8B02E53C890A16C5E595FB24865028774A664B</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Serialcoder.VisualLogParser_TemporaryKey.pfx</ManifestKeyFile>
+    <ReferencePath>c:\projects\sqalp.code\references;C:\Projects\sqalp.code\Applications\Serialcoder.VisualLogParser\References\</ReferencePath>
+    <PublishUrl>..\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.serialcoder.net/deploy/visual-logparser/</InstallUrl>
+    <UpdateUrl>http://www.serialcoder.net/deploy/visual-logparser/</UpdateUrl>
+    <SupportUrl>http://www.serialcoder.net</SupportUrl>
+    <ProductName>Visual LogParser</ProductName>
+    <PublisherName>SerialCoder.Net</PublisherName>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.TextEditor, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSharpCode.TextEditor.3.2.1.6466\lib\Net20\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="SandDock, Version=1.0.6.0, Culture=neutral, PublicKeyToken=75b7ec17dd7c14c3">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\SandDock.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Controls\ExtendedBackgroundWorler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FunctionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FunctionsControl.Designer.cs">
+      <DependentUpon>FunctionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\QueryContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\QueryControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutBoxForm.Designer.cs">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainFormPresenter.cs" />
+    <Compile Include="Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\EditMenuManager.cs" />
+    <Compile Include="Framework\Win32API.cs" />
+    <Compile Include="Framework\Win32\FileAssociation.cs" />
+    <Compile Include="MainWorkItem.cs" />
+    <Compile Include="Runtime\Configuration\InputsConfigurationSectionHandler.cs" />
+    <Compile Include="Runtime\DirectorySearcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Runtime\Input.cs" />
+    <Compile Include="Runtime\InputCollection.cs" />
+    <Compile Include="Runtime\InputEntry.cs" />
+    <Compile Include="Runtime\Query.cs" />
+    <Compile Include="Runtime\QueryCommand.cs" />
+    <Compile Include="Runtime\QueryResult.cs" />
+    <Compile Include="SqalpApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\GridView.resx">
+      <DependentUpon>GridView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\QueryContainer.resx">
+      <DependentUpon>QueryContainer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\QueryControl.resx">
+      <DependentUpon>QueryControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutBoxForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\Analyse.png" />
+    <None Include="Resources\Clear.png" />
+    <None Include="Resources\Execute.png" />
+    <None Include="Resources\Grid.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\Messages.png" />
+    <None Include="Resources\ObjectsExplorer.png" />
+    <None Include="Resources\SearchObjects.png" />
+    <Content Include="LogParser.xshd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\DOWNLOAD_00.gif" />
+    <Content Include="Sample queries\EventViewer\EventIDDistrib.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\EventViewer\EventIDDistrib.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\FileSystem\FilenameLengths.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\FileSystem\FilenameLengths.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\FileSystem\HiddenFiles.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\FileSystem\HiddenFiles.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\IIS\All Unique Urls retrieved.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\IIS\Bytes sent from the client.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\IIS\Bytes sent from the server.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\IIS\HTTP errors ordered by Url and Status.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\IIS\HTTP errors per hour.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\IIS\HTTP methods used per Url.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\IIS\Top 10 items retrieved.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\IIS\Top 10 slowest items.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\IIS\Win32 error codes by total and page.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\Registry\Top 50 entries from HKLM.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sample queries\Registry\Top 50 entries from HKLM.vlp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Serialcoder.VisualLogParser_1_TemporaryKey.pfx" />
+    <None Include="Serialcoder.VisualLogParser_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExternalReferences\SandDock.xml" />
+    <Content Include="LogParser.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="eventlog.ico" />
+    <Content Include="SyntaxModes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <BootstrapperPackage Include="LogParser">
+      <Visible>False</Visible>
+      <ProductName>LogParser 2.2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Component Include="ExternalReferences\ICSharpCode.TextEditor.dll" />
+    <Component Include="ExternalReferences\LogParser.dll" />
+    <Component Include="ExternalReferences\Microsoft.Practices.CompositeUI.dll" />
+    <Component Include="ExternalReferences\Microsoft.Practices.CompositeUI.WinForms.dll" />
+    <Component Include="ExternalReferences\Microsoft.Practices.ObjectBuilder.dll" />
+    <Component Include="ExternalReferences\SandDock.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSUtil">
+      <Guid>{A7E75D86-41CD-4B6E-B4BD-CC2ED34B3FB0}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>IISW3C</inputName>
+  <text>SELECT cs-uri-stem AS Url, sc-status AS Status, COUNT(*) AS Errors
+FROM ex*.log 
+WHERE (sc-status &gt;= 400) 
+GROUP BY Url, Status 
+ORDER BY Errors DESC</text>
+  <inputFormat>
+    <codepage>-2</codepage>
+    <iCodepage>-2</iCodepage>
+    <recurse>0</recurse>
+    <useDoubleQuotes>False</useDoubleQuotes>
+    <dQuotes>False</dQuotes>
+    <useDirectiveDateTime>False</useDirectiveDateTime>
+    <dirTime>False</dirTime>
+    <consolidateLogs>False</consolidateLogs>
+    <iCheckpoint />
+    <minDateMod />
+  </inputFormat>
+</query>

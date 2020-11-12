@@ -1,0 +1,641 @@
+<?xml version="1.0"?>
+<!-- syntaxdefinition for Oracle -->
+
+<SyntaxDefinition name = "LOGPARSER" extensions = ".vlp">
+	
+	<Properties>
+		<Property name="LineComment" value="--"/>
+	</Properties>
+	
+	<Digits name = "Digits" bold = "false" italic = "false" color = "DarkBlue"/>
+
+	<RuleSets>
+		<RuleSet ignorecase="true">
+			<Delimiters>&amp;&lt;&gt;~!%^*()-+=|\#/{}[]:;"' ,	.?</Delimiters>
+			
+		  	<Span name = "LineComment" rule = "CommentMarkerSet" bold = "false" italic = "false" color = "Green" stopateol = "true">
+			   	<Begin>--@!/@</Begin>
+		  	</Span>
+		  
+			<Span name = "BlockComment" rule = "CommentMarkerSet" bold = "false" italic = "false" color = "Green" stopateol = "false">
+				<Begin>/*</Begin>
+				<End>*/</End>
+			</Span>
+		  	
+			<Span name = "String" bold = "false" italic = "false" color = "Red" stopateol = "true">
+				<Begin>'</Begin>
+				<End>'</End>
+			</Span>
+			
+			<Span name = "MultiLineString" bold = "false" italic = "false" color = "Magenta" stopateol = "false" noescapesequences="true">
+				<Begin>@@'</Begin>
+				<End>'</End>
+			</Span>
+			
+			<Span name = "Char" bold = "false" italic = "false" color = "Magenta" stopateol = "true">
+				<Begin>&apos;</Begin>
+				<End>&apos;</End>
+			</Span>
+			
+			<MarkPrevious bold = "true" italic = "false" color = "MidnightBlue">(</MarkPrevious>
+			
+			<KeyWords name = "Punctuation" bold = "false" italic = "false" color = "DarkGreen">
+				<Key word = "?" />
+				<Key word = "," />
+				<Key word = "." />
+				<Key word = ";" />
+				<Key word = "(" />
+				<Key word = ")" />
+				<Key word = "[" />
+				<Key word = "]" />
+				<Key word = "{" />
+				<Key word = "}" />
+				<Key word = "+" />
+				<Key word = "-" />
+				<Key word = "/" />
+				<Key word = "%" />
+				<Key word = "*" />
+				<Key word = "&lt;" />
+				<Key word = "&gt;" />
+				<Key word = "^" />
+				<Key word = "=" />
+				<Key word = "~" />
+				<Key word = "!" />
+				<Key word = "|" />
+			    <Key word = "&amp;" />
+		  	</KeyWords>
+		  
+			<KeyWords name = "OperatorKeywords" bold="false" italic="false" color="Magenta">
+				<Key word = "ACCOUNT"/>
+				<Key word = "ACTIVATE"/>
+				<Key word = "ADMIN"/>
+				<Key word = "ADVISE"/>
+				<Key word = "AFTER"/>
+				<Key word = "ALL_ROWS"/>
+				<Key word = "ALLOCATE"/>
+				<Key word = "ANALYZE"/>
+				<Key word = "ARCHIVE"/>
+				<Key word = "ARCHIVELOG"/>
+				<Key word = "ARRAY"/>
+				<Key word = "ARRAYLEN"/>
+				<Key word = "AT"/>
+				<Key word = "AUTHENTICATED"/>
+				<Key word = "AUTHORIZATION"/>
+				<Key word = "AUTOEXTEND"/>
+				<Key word = "AUTOMATIC"/>
+				<Key word = "AVG"/>
+				<Key word = "BACKUP"/>
+				<Key word = "BECOME"/>
+				<Key word = "BEFORE"/>
+				<Key word = "BEGIN"/>
+				<Key word = "BFILE"/>
+				<Key word = "BITMAP"/>
+				<Key word = "BLOB"/>
+				<Key word = "BLOCK"/>
+				<Key word = "BODY"/>
+				<Key word = "CACHE"/>
+				<Key word = "CACHE_INSTANCES"/>
+				<Key word = "CANCEL"/>
+				<Key word = "CASCADE"/>
+				<Key word = "CAST"/>
+				<Key word = "CFILE"/>
+				<Key word = "CHAINED"/>
+				<Key word = "CHANGE"/>
+				<Key word = "CHAR_CS"/>
+				<Key word = "CHARACTER"/>
+				<Key word = "CHECKPOINT"/>
+				<Key word = "CHOOSE"/>
+				<Key word = "CHUNK"/>
+				<Key word = "CLEAR"/>
+				<Key word = "CLOB"/>
+				<Key word = "CLONE"/>
+				<Key word = "CLOSE"/>
+				<Key word = "CLOSE_CACHED_OPEN_CURSORS"/>
+				<Key word = "COALESCE"/>
+				<Key word = "COBOL"/>
+				<Key word = "COLUMNS"/>
+				<Key word = "COMMIT"/>
+				<Key word = "COMMITTED"/>
+				<Key word = "COMPATIBILITY"/>
+				<Key word = "COMPILE"/>
+				<Key word = "COMPLETE"/>
+				<Key word = "COMPOSITE_LIMIT"/>
+				<Key word = "COMPUTE"/>
+				<Key word = "CONNECT_TIME"/>
+				<Key word = "CONSTRAINT"/>
+				<Key word = "CONSTRAINTS"/>
+				<Key word = "CONTENTS"/>
+				<Key word = "CONTINUE"/>
+				<Key word = "CONTROLFILE"/>
+				<Key word = "CONVERT"/>
+				<Key word = "COST"/>
+				<Key word = "COUNT"/>
+				<Key word = "CPU_PER_CALL"/>
+				<Key word = "CPU_PER_SESSION"/>
+				<Key word = "CURRENT_SCHEMA"/>
+				<Key word = "CURRENT_USER"/>
+				<Key word = "CYCLE"/>
+				<Key word = "DANGLING"/>
+				<Key word = "DATABASE"/>
+				<Key word = "DATAFILE"/>
+				<Key word = "DATAFILES"/>
+				<Key word = "DATAOBJNO"/>
+				<Key word = "DBA"/>
+				<Key word = "DEALLOCATE"/>
+				<Key word = "DEBUG"/>
+				<Key word = "DEC"/>
+				<Key word = "DECLARE"/>
+				<Key word = "DEFERRABLE"/>
+				<Key word = "DEFERRED"/>
+				<Key word = "DEGREE"/>
+				<Key word = "DEREF"/>
+				<Key word = "DIRECTORY"/>
+				<Key word = "DISABLE"/>
+				<Key word = "DISCONNECT"/>
+				<Key word = "DISMOUNT"/>
+				<Key word = "DISTRIBUTED"/>
+				<Key word = "DML"/>
+				<Key word = "DOUBLE"/>
+				<Key word = "DUMP"/>
+				<Key word = "EACH"/>
+				<Key word = "ENABLE"/>
+				<Key word = "END"/>
+				<Key word = "ENFORCE"/>
+				<Key word = "ENTRY"/>
+				<Key word = "ESCAPE"/>
+				<Key word = "ESTIMATE"/>
+				<Key word = "EVENTS"/>
+				<Key word = "EXCEPT"/>
+				<Key word = "EXCEPTIONS"/>
+				<Key word = "EXCHANGE"/>
+				<Key word = "EXCLUDING"/>
+				<Key word = "EXEC"/>
+				<Key word = "EXECUTE"/>
+				<Key word = "EXPIRE"/>
+				<Key word = "EXPLAIN"/>
+				<Key word = "EXTENT"/>
+				<Key word = "EXTENTS"/>
+				<Key word = "EXTERNALLY"/>
+				<Key word = "FAILED_LOGIN_ATTEMPTS"/>
+				<Key word = "FALSE"/>
+				<Key word = "FAST"/>
+				<Key word = "FETCH"/>
+				<Key word = "FIRST_ROWS"/>
+				<Key word = "FLAGGER"/>
+				<Key word = "FLOB"/>
+				<Key word = "FLUSH"/>
+				<Key word = "FORCE"/>
+				<Key word = "FOREIGN"/>
+				<Key word = "FORTRAN"/>
+				<Key word = "FOUND"/>
+				<Key word = "FREELIST"/>
+				<Key word = "FREELISTS"/>
+				<Key word = "FULL"/>
+				<Key word = "FUNCTION"/>
+				<Key word = "GLOBAL"/>
+				<Key word = "GLOBAL_NAME"/>
+				<Key word = "GLOBALLY"/>
+				<Key word = "GO"/>
+				<Key word = "GOTO"/>
+				<Key word = "GROUPS"/>
+				<Key word = "HASH"/>
+				<Key word = "HASHKEYS"/>
+				<Key word = "HEADER"/>
+				<Key word = "HEAP"/>
+				<Key word = "IDGENERATORS"/>
+				<Key word = "IDLE_TIME"/>
+				<Key word = "IF"/>
+				<Key word = "INCLUDING"/>
+				<Key word = "IND_PARTITION"/>
+				<Key word = "INDEXED"/>
+				<Key word = "INDEXES"/>
+				<Key word = "INDICATOR"/>
+				<Key word = "INITIALLY"/>
+				<Key word = "INITRANS"/>
+				<Key word = "INSTANCE"/>
+				<Key word = "INSTANCES"/>
+				<Key word = "INSTEAD"/>
+				<Key word = "INT"/>
+				<Key word = "INTERMEDIATE"/>
+				<Key word = "ISOLATION"/>
+				<Key word = "ISOLATION_LEVEL"/>
+				<Key word = "KEEP"/>
+				<Key word = "KEY"/>
+				<Key word = "KILL"/>
+				<Key word = "LABEL"/>
+				<Key word = "LANGUAGE"/>
+				<Key word = "LAYER"/>
+				<Key word = "LESS"/>
+				<Key word = "LIBRARY"/>
+				<Key word = "LIMIT"/>
+				<Key word = "LINK"/>
+				<Key word = "LIST"/>
+				<Key word = "LISTS"/>
+				<Key word = "LOB"/>
+				<Key word = "LOCAL"/>
+				<Key word = "LOCKED"/>
+				<Key word = "LOG"/>
+				<Key word = "LOGFILE"/>
+				<Key word = "LOGGING"/>
+				<Key word = "LOGICAL_READS_PER_CALL"/>
+				<Key word = "LOGICAL_READS_PER_SESSION"/>
+				<Key word = "MANAGE"/>
+				<Key word = "MANUAL"/>
+				<Key word = "MASTER"/>
+				<Key word = "MAX"/>
+				<Key word = "MAXARCHLOGS"/>
+				<Key word = "MAXDATAFILES"/>
+				<Key word = "MAXINSTANCES"/>
+				<Key word = "MAXLOGFILES"/>
+				<Key word = "MAXLOGHISTORY"/>
+				<Key word = "MAXLOGMEMBERS"/>
+				<Key word = "MAXSIZE"/>
+				<Key word = "MAXTRANS"/>
+				<Key word = "MAXVALUE"/>
+				<Key word = "MEMBER"/>
+				<Key word = "MIN"/>
+				<Key word = "MINEXTENTS"/>
+				<Key word = "MINIMUM"/>
+				<Key word = "MINVALUE"/>
+				<Key word = "MODULE"/>
+				<Key word = "MOUNT"/>
+				<Key word = "MOVE"/>
+				<Key word = "MTS_DISPATCHERS"/>
+				<Key word = "MULTISET"/>
+				<Key word = "NATIONAL"/>
+				<Key word = "NCHAR"/>
+				<Key word = "NCHAR_CS"/>
+				<Key word = "NCLOB"/>
+				<Key word = "NEEDED"/>
+				<Key word = "NESTED"/>
+				<Key word = "NETWORK"/>
+				<Key word = "NEW"/>
+				<Key word = "NEXT"/>
+				<Key word = "NOARCHIVELOG"/>
+				<Key word = "NOCACHE"/>
+				<Key word = "NOCYCLE"/>
+				<Key word = "NOFORCE"/>
+				<Key word = "NOLOGGING"/>
+				<Key word = "NOMAXVALUE"/>
+				<Key word = "NOMINVALUE"/>
+				<Key word = "NONE"/>
+				<Key word = "NOORDER"/>
+				<Key word = "NOOVERRIDE"/>
+				<Key word = "NOPARALLEL"/>
+				<Key word = "NORESETLOGS"/>
+				<Key word = "NOREVERSE"/>
+				<Key word = "NORMAL"/>
+				<Key word = "NOSORT"/>
+				<Key word = "NOTHING"/>
+				<Key word = "NUMERIC"/>
+				<Key word = "NVARCHAR2"/>
+				<Key word = "OBJECT"/>
+				<Key word = "OBJNO"/>
+				<Key word = "OBJNO_REUSE"/>
+				<Key word = "OFF"/>
+				<Key word = "OID"/>
+				<Key word = "OIDINDEX"/>
+				<Key word = "OLD"/>
+				<Key word = "ONLY"/>
+				<Key word = "OPCODE"/>
+				<Key word = "OPEN"/>
+				<Key word = "OPTIMAL"/>
+				<Key word = "OPTIMIZER_GOAL"/>
+				<Key word = "ORGANIZATION"/>
+				<Key word = "OVERFLOW"/>
+				<Key word = "OWN"/>
+				<Key word = "PACKAGE"/>
+				<Key word = "PACKED"/>
+				<Key word = "PARALLEL"/>
+				<Key word = "PARTITION"/>
+				<Key word = "PASSWORD"/>
+				<Key word = "PASSWORD_GRACE_TIME"/>
+				<Key word = "PASSWORD_LIFE_TIME"/>
+				<Key word = "PASSWORD_LOCK_TIME"/>
+				<Key word = "PASSWORD_REUSE_MAX"/>
+				<Key word = "PASSWORD_REUSE_TIME"/>
+				<Key word = "PASSWORD_VERIFY_FUNCTION"/>
+				<Key word = "PCTINCREASE"/>
+				<Key word = "PCTTHRESHOLD"/>
+				<Key word = "PCTUSED"/>
+				<Key word = "PCTVERSION"/>
+				<Key word = "PERCENT"/>
+				<Key word = "PERMANENT"/>
+				<Key word = "PLAN"/>
+				<Key word = "PLI"/>
+				<Key word = "PLSQL_DEBUG"/>
+				<Key word = "POST_TRANSACTION"/>
+				<Key word = "PRECISION"/>
+				<Key word = "PRESERVE"/>
+				<Key word = "PRIMARY"/>
+				<Key word = "PRIVATE"/>
+				<Key word = "PRIVATE_SGA"/>
+				<Key word = "PRIVILEGE"/>
+				<Key word = "PROCEDURE"/>
+				<Key word = "PROFILE"/>
+				<Key word = "PURGE"/>
+				<Key word = "QUEUE"/>
+				<Key word = "QUOTA"/>
+				<Key word = "RANGE"/>
+				<Key word = "RBA"/>
+				<Key word = "READ"/>
+				<Key word = "REAL"/>
+				<Key word = "REBUILD"/>
+				<Key word = "RECOVER"/>
+				<Key word = "RECOVERABLE"/>
+				<Key word = "RECOVERY"/>
+				<Key word = "REF"/>
+				<Key word = "REFERENCES"/>
+				<Key word = "REFERENCING"/>
+				<Key word = "REFRESH"/>
+				<Key word = "REPLACE"/>
+				<Key word = "RESET"/>
+				<Key word = "RESETLOGS"/>
+				<Key word = "RESIZE"/>
+				<Key word = "RESTRICTED"/>
+				<Key word = "RETURN"/>
+				<Key word = "RETURNING"/>
+				<Key word = "REUSE"/>
+				<Key word = "REVERSE"/>
+				<Key word = "ROLE"/>
+				<Key word = "ROLES"/>
+				<Key word = "ROLLBACK"/>
+				<Key word = "RULE"/>
+				<Key word = "SAMPLE"/>
+				<Key word = "SAVEPOINT"/>
+				<Key word = "SB4"/>
+				<Key word = "SCAN_INSTANCES"/>
+				<Key word = "SCHEMA"/>
+				<Key word = "SCN"/>
+				<Key word = "SCOPE"/>
+				<Key word = "SD_ALL"/>
+				<Key word = "SD_INHIBIT"/>
+				<Key word = "SD_SHOW"/>
+				<Key word = "SECTION"/>
+				<Key word = "SEG_BLOCK"/>
+				<Key word = "SEG_FILE"/>
+				<Key word = "SEGMENT"/>
+				<Key word = "SEQUENCE"/>
+				<Key word = "SERIALIZABLE"/>
+				<Key word = "SESSION_CACHED_CURSORS"/>
+				<Key word = "SESSIONS_PER_USER"/>
+				<Key word = "SHARED"/>
+				<Key word = "SHARED_POOL"/>
+				<Key word = "SHRINK"/>
+				<Key word = "SKIP"/>
+				<Key word = "SKIP_UNUSABLE_INDEXES"/>
+				<Key word = "SNAPSHOT"/>
+				<Key word = "SOME"/>
+				<Key word = "SORT"/>
+				<Key word = "SPECIFICATION"/>
+				<Key word = "SPLIT"/>
+				<Key word = "SQL"/>
+				<Key word = "SQL_TRACE"/>
+				<Key word = "SQLCODE"/>
+				<Key word = "SQLERROR"/>
+				<Key word = "SQLSTATE"/>
+				<Key word = "STANDBY"/>
+				<Key word = "STATEMENT_ID"/>
+				<Key word = "STATISTICS"/>
+				<Key word = "STOP"/>
+				<Key word = "STORAGE"/>
+				<Key word = "STORE"/>
+				<Key word = "STRUCTURE"/>
+				<Key word = "SUM"/>
+				<Key word = "SWITCH"/>
+				<Key word = "SYS_OP_ENFORCE_NOT_NULL$"/>
+				<Key word = "SYS_OP_NTCIMG$"/>
+				<Key word = "SYSDBA"/>
+				<Key word = "SYSOPER"/>
+				<Key word = "SYSTEM"/>
+				<Key word = "TABLES"/>
+				<Key word = "TABLESPACE"/>
+				<Key word = "TABLESPACE_NO"/>
+				<Key word = "TABNO"/>
+				<Key word = "TEMPORARY"/>
+				<Key word = "THAN"/>
+				<Key word = "THE"/>
+				<Key word = "THREAD"/>
+				<Key word = "TIME"/>
+				<Key word = "TIMESTAMP"/>
+				<Key word = "TOPLEVEL"/>
+				<Key word = "TRACE"/>
+				<Key word = "TRACING"/>
+				<Key word = "TRANSACTION"/>
+				<Key word = "TRANSITIONAL"/>
+				<Key word = "TRIGGERS"/>
+				<Key word = "TRUE"/>
+				<Key word = "TRUNCATE"/>
+				<Key word = "TX"/>
+				<Key word = "TYPE"/>
+				<Key word = "UB2"/>
+				<Key word = "UBA"/>
+				<Key word = "UNARCHIVED"/>
+				<Key word = "UNDER"/>
+				<Key word = "UNDO"/>
+				<Key word = "UNLIMITED"/>
+				<Key word = "UNLOCK"/>
+				<Key word = "UNPACKED"/>
+				<Key word = "UNRECOVERABLE"/>
+				<Key word = "UNTIL"/>
+				<Key word = "UNUSABLE"/>
+				<Key word = "UNUSED"/>
+				<Key word = "UPDATABLE"/>
+				<Key word = "USAGE"/>
+				<Key word = "USE"/>
+				<Key word = "USING"/>
+				<Key word = "VARYING"/>
+				<Key word = "WHEN"/>
+				<Key word = "WITHOUT"/>
+				<Key word = "WORK"/>
+				<Key word = "WRITE"/>
+				<Key word = "XID"/>
+			</KeyWords>
+			
+			<KeyWords name = "AccessKeywords" bold="false" italic="false" color="Gray">
+				<Key word = "OUTER" />
+				<Key word = "AND" />
+				<Key word = "ANY" />
+				<Key word = "BETWEEN" />
+				<Key word = "EXISTS" />
+				<Key word = "IN" />
+				<Key word = "JOIN" />
+				<Key word = "LIKE" />
+				<Key word = "NOT" />
+				<Key word = "NULL" />
+				<Key word = "OR" />
+			</KeyWords>
+		  
+			<!--KeyWords name = "SelectionStatements" bold="false" italic="false" color="Blue"-->
+			<KeyWords name = "ReservredWords" bold="true" italic="false" color="Blue">
+				<Key word = "ACCESS"/>
+				<Key word = "ADD"/>
+				<Key word = "ALL"/>
+				<Key word = "ALTER"/>
+				<Key word = "AS"/>
+				<Key word = "ASC"/>
+				<Key word = "AUDIT"/>
+				<Key word = "BY"/>
+				<Key word = "CHAR"/>
+				<Key word = "CHECK"/>
+				<Key word = "CLUSTER"/>
+				<Key word = "COLUMN"/>
+				<Key word = "COMMENT"/>
+				<Key word = "COMPRESS"/>
+				<Key word = "CONNECT"/>
+				<Key word = "CREATE"/>
+				<Key word = "CURRENT"/>
+				<Key word = "CURSOR"/>
+				<Key word = "DATE"/>
+				<Key word = "DECIMAL"/>
+				<Key word = "DEFAULT"/>
+				<Key word = "DELETE"/>
+				<Key word = "DESC"/>
+				<Key word = "DISTINCT"/>
+				<Key word = "DROP"/>
+				<Key word = "ELSE"/>
+				<Key word = "EXCLUSIVE"/>
+				<Key word = "FILE"/>
+				<Key word = "FLOAT"/>
+				<Key word = "FOR"/>
+				<Key word = "FROM"/>
+				<Key word = "GRANT"/>
+				<Key word = "GROUP"/>
+				<Key word = "HAVING"/>
+				<Key word = "IDENTIFIED"/>
+				<Key word = "IMMEDIATE"/>
+				<Key word = "IN"/>
+				<Key word = "INCREMENT"/>
+				<Key word = "INDEX"/>
+				<Key word = "INITIAL"/>
+				<Key word = "INSERT"/>
+				<Key word = "INTEGER"/>
+				<Key word = "INTERSECT"/>
+				<Key word = "INTO"/>
+				<Key word = "IS"/>
+				<Key word = "LEVEL"/>
+				<Key word = "LIKE"/>
+				<Key word = "LOCK"/>
+				<Key word = "LONG"/>
+				<Key word = "MAXEXTENTS"/>
+				<Key word = "MINUS"/>
+				<Key word = "MLSLABEL"/>
+				<Key word = "MODE"/>
+				<Key word = "MODIFY"/>
+				<Key word = "NOAUDIT"/>
+				<Key word = "NOCOMPRESS"/>
+				<Key word = "NOTFOUND"/>
+				<Key word = "NOWAIT"/>
+				<Key word = "NUMBER"/>
+				<Key word = "OF"/>
+				<Key word = "OFFLINE"/>
+				<Key word = "ON"/>
+				<Key word = "ONLINE"/>
+				<Key word = "OPTION"/>
+				<Key word = "ORDER"/>
+				<Key word = "PCTFREE"/>
+				<Key word = "PRIOR"/>
+				<Key word = "PRIVILEGES"/>
+				<Key word = "PUBLIC"/>
+				<Key word = "RAW"/>
+				<Key word = "RENAME"/>
+				<Key word = "RESOURCE"/>
+				<Key word = "REVOKE"/>
+				<Key word = "ROW"/>
+				<Key word = "ROWID"/>
+				<Key word = "ROWLABEL"/>
+				<Key word = "ROWNUM"/>
+				<Key word = "ROWS"/>
+				<Key word = "SELECT"/>
+				<Key word = "SESSION"/>
+				<Key word = "SET"/>
+				<Key word = "SHARE"/>
+				<Key word = "SIZE"/>
+				<Key word = "SMALLINT"/>
+				<Key word = "SQLBUF"/>
+				<Key word = "START"/>
+				<Key word = "SUCCESSFUL"/>
+				<Key word = "SYNONYM"/>
+				<Key word = "SYSDATE"/>
+				<Key word = "TABLE"/>
+				<Key word = "THEN"/>
+				<Key word = "TO"/>
+				<Key word = "TRIGGER"/>
+				<Key word = "UID"/>
+				<Key word = "UNION"/>
+				<Key word = "UNIQUE"/>
+				<Key word = "UPDATE"/>
+				<Key word = "USER"/>
+				<Key word = "VALIDATE"/>
+				<Key word = "VALIDATION"/>
+				<Key word = "VALUE"/>
+				<Key word = "VALUES"/>
+				<Key word = "VARCHAR"/>
+				<Key word = "VARCHAR2"/>
+				<Key word = "WHENEVER"/>
+				<Key word = "WHERE"/>
+				<Key word = "VIEW"/>
+				<Key word = "WITH"/>
+
+			</KeyWords>
+			
+			<KeyWords name = "SystemTables" bold="false" italic="false" color="Teal">
+				<Key word = "sysaltfiles" />
+				<Key word = "syslockinfo" />
+				<Key word = "syscacheobjects" />
+				<Key word = "syslogins" />
+				<Key word = "syscharsets" />
+				<Key word = "sysmessages" />
+				<Key word = "sysconfigures" />
+				<Key word = "sysoledbusers" />
+				<Key word = "syscurconfigs" />
+				<Key word = "sysperfinfo" />
+				<Key word = "sysdatabases" />
+				<Key word = "sysprocesses" />
+				<Key word = "sysdevices" />
+				<Key word = "sysremotelogins" />
+				<Key word = "syslanguages" />
+				<Key word = "sysservers" />
+				<Key word = "syscolumns" />
+				<Key word = "sysindexkeys" />
+				<Key word = "syscomments" />
+				<Key word = "sysmembers" />
+				<Key word = "sysconstraints" />
+				<Key word = "sysobjects" />
+				<Key word = "sysdepends" />
+				<Key word = "syspermissions" />
+				<Key word = "sysfilegroups" />
+				<Key word = "sysprotects" />
+				<Key word = "sysfiles" />
+				<Key word = "sysreferences" />
+				<Key word = "sysforeignkeys" />
+				<Key word = "systypes" />
+				<Key word = "sysfulltextcatalogs" />
+				<Key word = "sysusers" />
+				<Key word = "sysindexes" />
+				<Key word = "sysalerts" />
+				<Key word = "sysjobsteps" />
+				<Key word = "syscategories" />
+				<Key word = "sysnotifications" />
+				<Key word = "sysdownloadlist" />
+				<Key word = "sysoperators" />
+				<Key word = "sysjobhistory" />
+				<Key word = "systargetservergroupmembers" />
+				<Key word = "sysjobs" />
+				<Key word = "systargetservergroups" />
+				<Key word = "sysjobschedules" />
+				<Key word = "systargetservers" />
+				<Key word = "sysjobservers" />
+				<Key word = "systaskids" />
+				<Key word = "sysdatabases" />
+				<Key word = "sysservers" />
+			</KeyWords>
+		</RuleSet>
+		
+		<RuleSet name = "CommentMarkerSet" ignorecase = "true"></RuleSet>
+		
+		<RuleSet name = "DocCommentSet" ignorecase = "false"></RuleSet>
+		
+		<RuleSet name = "XmlDocSet" ignorecase = "false"></RuleSet>
+	</RuleSets>
+</SyntaxDefinition>

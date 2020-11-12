@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>FS</inputName>
+  <text>SELECT 	STRLEN(Name) AS NameLen,
+	COUNT(*) AS Total
+FROM C:\*.*
+GROUP BY NameLen
+ORDER BY Total
+
+	</text>
+  <inputFormat>
+    <recurse>-1</recurse>
+    <preserveLastAccTime>False</preserveLastAccTime>
+    <useLocalTime>True</useLocalTime>
+  </inputFormat>
+</query>

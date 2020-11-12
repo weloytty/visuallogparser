@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>IISW3C</inputName>
+  <text>SELECT TOP 10 cs-uri-stem as Url, COUNT(cs-uri-stem) AS Hits
+FROM ex*.log 
+GROUP BY cs-uri-stem 
+ORDER BY Hits DESC</text>
+  <inputFormat>
+    <codepage>-2</codepage>
+    <iCodepage>-2</iCodepage>
+    <recurse>0</recurse>
+    <useDoubleQuotes>False</useDoubleQuotes>
+    <dQuotes>False</dQuotes>
+    <useDirectiveDateTime>False</useDirectiveDateTime>
+    <dirTime>False</dirTime>
+    <consolidateLogs>False</consolidateLogs>
+    <iCheckpoint />
+    <minDateMod />
+  </inputFormat>
+</query>

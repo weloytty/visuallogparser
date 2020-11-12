@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>IISW3C</inputName>
+  <text>SELECT cs-uri-stem AS Url, 
+WIN32_ERROR_DESCRIPTION(sc-win32-status) AS Error, Count(*) AS Total
+FROM ex*.log 
+WHERE (sc-win32-status &gt; 0) 
+GROUP BY Url, Error 
+ORDER BY Total DESC</text>
+  <inputFormat>
+    <codepage>-2</codepage>
+    <iCodepage>-2</iCodepage>
+    <recurse>0</recurse>
+    <useDoubleQuotes>False</useDoubleQuotes>
+    <dQuotes>False</dQuotes>
+    <useDirectiveDateTime>False</useDirectiveDateTime>
+    <dirTime>False</dirTime>
+    <consolidateLogs>False</consolidateLogs>
+    <iCheckpoint />
+    <minDateMod />
+  </inputFormat>
+</query>

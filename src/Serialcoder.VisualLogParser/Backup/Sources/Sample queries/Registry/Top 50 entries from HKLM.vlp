@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>REG</inputName>
+  <text>Select top 5 * from \HKLM</text>
+  <inputFormat>
+    <recurse>-1</recurse>
+    <multiSZSep>|</multiSZSep>
+    <binaryFormat>ASC</binaryFormat>
+  </inputFormat>
+</query>

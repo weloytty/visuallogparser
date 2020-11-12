@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>IISW3C</inputName>
+  <text>SELECT cs-uri-stem AS Url, cs-method AS Method, 
+Count(*) AS Total 
+FROM ex*.log 
+WHERE (sc-status &lt; 400 or sc-status &gt;= 500)
+GROUP BY Url, Method
+ORDER BY Url, Method</text>
+  <inputFormat>
+    <codepage>-2</codepage>
+    <iCodepage>-2</iCodepage>
+    <recurse>0</recurse>
+    <useDoubleQuotes>False</useDoubleQuotes>
+    <dQuotes>False</dQuotes>
+    <useDirectiveDateTime>False</useDirectiveDateTime>
+    <dirTime>False</dirTime>
+    <consolidateLogs>False</consolidateLogs>
+    <iCheckpoint />
+    <minDateMod />
+  </inputFormat>
+</query>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<query>
+  <inputName>EVT</inputName>
+  <text>SELECT	SourceName, 
+	EventID, 
+	MUL(PROPCOUNT(*) ON (SourceName), 100.0) AS Percent
+FROM System
+GROUP BY SourceName, EventID
+ORDER BY SourceName, Percent DESC</text>
+  <inputFormat>
+    <fullText>True</fullText>
+    <resolveSIDs>False</resolveSIDs>
+    <formatMessage>True</formatMessage>
+    <formatMsg>True</formatMsg>
+    <msgErrorMode>MSG</msgErrorMode>
+    <fullEventCode>False</fullEventCode>
+    <direction>FW</direction>
+    <stringsSep>|</stringsSep>
+    <iCheckpoint />
+    <binaryFormat>HEX</binaryFormat>
+  </inputFormat>
+</query>

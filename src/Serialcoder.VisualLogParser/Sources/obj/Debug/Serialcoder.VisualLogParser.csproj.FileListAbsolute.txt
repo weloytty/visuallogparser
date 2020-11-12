@@ -1,0 +1,11 @@
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.csprojAssemblyReference.cache
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.csproj.ResolveComReference.cache
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.Controls.GridView.resources
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.Controls.QueryContainer.resources
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.Controls.QueryControl.resources
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.Forms.AboutBoxForm.resources
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.Forms.MainForm.resources
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.Forms.SettingsForm.resources
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.Properties.Resources.resources
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.csproj.GenerateResource.cache
+C:\code\git\visuallogparser\src\Serialcoder.VisualLogParser\Sources\obj\Debug\Serialcoder.VisualLogParser.csproj.CoreCompileInputs.cache

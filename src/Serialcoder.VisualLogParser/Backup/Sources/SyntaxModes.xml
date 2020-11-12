@@ -1,0 +1,5 @@
+<SyntaxModes version="1.0">
+	<Mode file       = "LogParser.xshd"
+	      name       = "LOGPARSER"
+	      extensions = ".vlp"/>
+</SyntaxModes>
